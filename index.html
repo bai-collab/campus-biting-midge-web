@@ -6,7 +6,7 @@
 <title>校園小黑蚊｜學生學習單</title>
 <link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b8f8a'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-size='36'%3E🦟%3C/text%3E%3C/svg%3E" rel="icon"/>
 <link href="styles.css" rel="stylesheet"/>
-<link href="mosquito-header.css" rel="stylesheet"/>
+<link href="hero-art.css" rel="stylesheet"/>
 </head>
 <body>
 <div class="shell">
@@ -22,15 +22,17 @@
 </header>
 <div class="local-banner">⚠️ 單機測試版：目前資料只儲存在這台裝置的瀏覽器，不會上傳 Google Sheets。正式版將替換為 GAS 儲存介面。</div>
 <section class="view active" id="loginView">
-<div class="card login-wrap">
-<div class="hero">
-<div class="midge">🦟</div>
-<div class="mini">問題探索 × 第一手證據 × AI 素養</div>
+<div class="card login-wrap homepage-login">
+<div class="hero hero-generated">
+<div class="hero-copy">
+<div class="mini hero-kicker">問題探索 × 第一手證據 × AI 素養</div>
 <h2>從校園裡的小黑蚊，<br/>開始一段真實的問題探索。</h2>
 <p>每一節保留自己的思考痕跡。你們的觀察、訪談、判斷與修正，都會成為下一步的重要證據。</p>
-<div class="school">🏫</div><div class="kids">🧒🏻👧🏻🧑🏻‍🎓</div>
+</div>
+<div class="hero-art" aria-hidden="true"></div>
 </div>
 <div class="login-panel">
+<div class="mini login-eyebrow">🌱 歡迎來到校園小黑蚊的探索世界</div>
 <h2>進入學習單</h2><p class="mini">免帳號登入｜使用班級 + 組別識別</p>
 <div class="select-grid">
 <div class="field"><label for="classSelect">🏫 班級</label><select id="classSelect"><option value="5A">五年甲班</option><option value="5B">五年乙班</option></select></div>
@@ -48,6 +50,6 @@
 </section>
 <section class="view" id="lessonView"><div id="lessonMount"></div></section>
 </div>
-<script src="app-core.js"></script><script src="lessons-3-6.js"></script><script src="lessons-7-10.js"></script><script src="lessons-11-12.js"></script><script src="mosquito.js"></script>
+<script src="app-core.js"></script><script src="lessons-3-6.js"></script><script src="lessons-7-10.js"></script><script src="lessons-11-12.js"></script>
 </body>
 </html>
