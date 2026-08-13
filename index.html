@@ -1,22 +1,21 @@
 <!DOCTYPE html>
-
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>校園小黑蚊｜Web 學習單 Prototype</title>
+<title>校園小黑蚊｜學生學習單</title>
 <link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b8f8a'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-size='36'%3E🦟%3C/text%3E%3C/svg%3E" rel="icon"/>
-<link href="styles.css" rel="stylesheet"/></head>
+<link href="styles.css" rel="stylesheet"/>
+</head>
 <body>
 <div class="shell">
 <header class="topbar">
 <div class="brand">
 <div class="brandmark">🦟</div>
-<div><h1>校園小黑蚊 Web 學習單</h1><p>AI 融入問題探索課程｜單機 Prototype</p></div>
+<div><h1>校園小黑蚊 Web 學習單</h1><p>AI 融入問題探索課程｜學生端 Prototype</p></div>
 </div>
 <div class="top-actions">
-<button class="ghost" id="homeBtn">學生端</button>
-<button class="ghost" id="teacherBtn">教師查看</button>
+<button class="ghost" id="homeBtn">學習歷程</button>
 <button class="ghost" id="resetBtn">清除此組測試資料</button>
 </div>
 </header>
@@ -47,10 +46,7 @@
 <div class="lesson-grid" id="lessonGrid"></div>
 </section>
 <section class="view" id="lessonView"><div id="lessonMount"></div></section>
-<section class="view" id="teacherView">
-<div class="dashboard-head"><div><h2 style="margin:0">教師查看</h2><p class="mini">單機版會讀取本瀏覽器曾建立過的班級／組別測試資料。</p></div><button class="ghost" id="refreshTeacher">重新整理</button></div>
-<div class="teacher-grid"><div class="card table-card"><div class="group-row head"><span>組別</span><span>完成</span><span>目前節次</span><span>最後更新</span></div><div id="groupList"></div></div><div class="card preview"><div id="previewMount"><div class="placeholder"><div class="big">👩🏻‍🏫</div><p>請從左側選擇一組。</p></div></div><div class="warn"><b>🛡️ Human Gate｜匿名化提醒</b><br/>進行 AI 相關活動前，必須移除姓名、座號、聯絡方式與其他可識別細節；沒有第一手證據支持的 AI 內容仍需標記「待確認」。</div></div></div>
-</section>
 </div>
-<script src="app-core.js"></script><script src="lessons-3-6.js"></script><script src="lessons-7-10.js"></script><script src="lessons-11-12.js"></script></body>
+<script src="app-core.js"></script><script src="lessons-3-6.js"></script><script src="lessons-7-10.js"></script><script src="lessons-11-12.js"></script>
+</body>
 </html>
