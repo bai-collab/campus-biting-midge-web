@@ -54,5 +54,24 @@ textarea{min-height:110px;resize:vertical}.select-grid{display:grid;grid-templat
 .placeholder{padding:42px;text-align:center}.placeholder .big{font-size:58px}
 .local-banner{background:#fff3ca;border:1px solid #edd785;color:#6e5a17;border-radius:13px;padding:10px 13px;margin-bottom:14px;font-size:14px}
 .mini{font-size:12px;color:var(--muted)}
+
+/* Animated student-side mosquito mascot */
+.brandmark-mascot-anchor{color:transparent;position:relative}
+.mosquito-pet{position:fixed;left:0;top:0;width:60px;height:46px;z-index:18;pointer-events:none;user-select:none;color:#173b3f;transition:transform var(--flight-duration,1400ms) cubic-bezier(.33,.02,.2,1);will-change:transform;filter:drop-shadow(0 4px 5px rgba(20,52,58,.16))}
+.mosquito-pet.no-transition{transition:none!important}
+.mosquito-svg{width:100%;height:100%;overflow:visible}
+.mosquito-body{fill:#203f43;stroke:#173b3f;stroke-width:1.5}
+.mosquito-wing{fill:rgba(210,244,244,.72);stroke:#4f9696;stroke-width:2;transform-box:fill-box;will-change:transform}
+.mosquito-wing-left{transform-origin:88% 70%;animation:mosquitoWingLeft .13s ease-in-out infinite alternate}
+.mosquito-wing-right{transform-origin:12% 70%;animation:mosquitoWingRight .13s ease-in-out infinite alternate}
+.mosquito-pet.idle .mosquito-svg{animation:mosquitoIdle 2.2s ease-in-out infinite}
+.mosquito-pet.flying .mosquito-svg{animation:mosquitoFlightBuzz .22s ease-in-out infinite alternate}
+.mosquito-pet.flying .mosquito-wing-left,.mosquito-pet.flying .mosquito-wing-right{animation-duration:.075s}
+@keyframes mosquitoWingLeft{from{transform:rotate(-13deg) scaleY(.92)}to{transform:rotate(19deg) scaleY(.38)}}
+@keyframes mosquitoWingRight{from{transform:rotate(13deg) scaleY(.92)}to{transform:rotate(-19deg) scaleY(.38)}}
+@keyframes mosquitoIdle{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-2px) rotate(2deg)}}
+@keyframes mosquitoFlightBuzz{from{transform:translateY(-1px) rotate(-5deg)}to{transform:translateY(1px) rotate(5deg)}}
+
 @media(max-width:900px){.login-wrap,.teacher-grid{grid-template-columns:1fr}.hero{min-height:330px}.lesson-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:650px){.shell{padding:12px}.topbar{align-items:flex-start}.brand h1{font-size:18px}.login-panel,.hero{padding:24px}.select-grid,.two{grid-template-columns:1fr}.lesson-grid{grid-template-columns:repeat(2,1fr)}.progress-card{grid-template-columns:70px 1fr}.progress-card .save{grid-column:1/-1}.group-row{grid-template-columns:1fr .7fr .7fr}.group-row span:last-child{display:none}.navrow{flex-direction:column}.navrow button{width:100%}}
+@media(max-width:650px){.shell{padding:12px}.topbar{align-items:flex-start}.brand h1{font-size:18px}.login-panel,.hero{padding:24px}.select-grid,.two{grid-template-columns:1fr}.lesson-grid{grid-template-columns:repeat(2,1fr)}.progress-card{grid-template-columns:70px 1fr}.progress-card .save{grid-column:1/-1}.group-row{grid-template-columns:1fr .7fr .7fr}.group-row span:last-child{display:none}.navrow{flex-direction:column}.navrow button{width:100%}.mosquito-pet{width:54px;height:42px}}
+@media(prefers-reduced-motion:reduce){.mosquito-pet{transition:none}.mosquito-pet .mosquito-svg,.mosquito-pet .mosquito-wing{animation:none!important}}
