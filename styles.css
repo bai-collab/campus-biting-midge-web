@@ -1,0 +1,58 @@
+:root{
+  --teal:#0b8f8a;--teal2:#08726f;--green:#56ad6f;--lime:#edf8ee;--yellow:#fff2be;
+  --ink:#14343a;--muted:#65777b;--line:#dce7e8;--bg:#f5faf9;--card:#fff;--danger:#bd5a44;
+  --shadow:0 10px 28px rgba(25,65,69,.08);--r:20px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;line-height:1.55}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.shell{max-width:1180px;margin:auto;padding:18px}
+.topbar{display:flex;gap:14px;align-items:center;justify-content:space-between;margin-bottom:18px}
+.brand{display:flex;gap:12px;align-items:center}.brandmark{width:48px;height:48px;border-radius:15px;background:var(--teal);color:white;display:grid;place-items:center;font-size:25px}
+.brand h1{font-size:22px;margin:0}.brand p{margin:0;color:var(--muted);font-size:13px}
+.top-actions{display:flex;gap:8px;flex-wrap:wrap}.ghost,.primary{border:0;border-radius:12px;padding:10px 14px;font-weight:700}
+.ghost{background:white;color:var(--ink);border:1px solid var(--line)}.primary{background:var(--teal);color:white}
+.view{display:none}.view.active{display:block}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
+.login-wrap{display:grid;grid-template-columns:1.08fr .92fr;min-height:620px;overflow:hidden}
+.hero{padding:42px;background:linear-gradient(160deg,#dff6fb,#eef9e9 58%,#fff6cf);position:relative;overflow:hidden}
+.hero h2{font-size:32px;line-height:1.25;margin:10px 0}.hero p{max-width:560px}
+.midge{font-size:58px;position:absolute;right:42px;top:70px;transform:rotate(-8deg)}
+.school{font-size:110px;opacity:.9;margin-top:75px}.kids{font-size:72px;margin-top:70px}
+.login-panel{padding:44px;display:flex;flex-direction:column;justify-content:center}.login-panel h2{margin:0 0 8px}
+.field{margin:14px 0}.field label{display:block;font-weight:700;margin-bottom:7px}
+select,input[type=text],textarea{width:100%;border:1px solid #cadbda;border-radius:13px;background:#fff;padding:12px 13px;color:var(--ink)}
+textarea{min-height:110px;resize:vertical}.select-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.big-btn{width:100%;border:0;background:var(--teal);color:#fff;border-radius:16px;padding:15px 18px;font-weight:800;font-size:18px;margin-top:18px}
+.note{border-radius:14px;padding:12px 14px;margin-top:14px;background:#f3f8f7;color:var(--muted);font-size:14px}
+.dashboard-head{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;margin-bottom:16px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{padding:7px 11px;border-radius:999px;background:#e8f7f5;color:var(--teal2);font-size:13px;font-weight:700}
+.progress-card{padding:22px;display:grid;grid-template-columns:90px 1fr auto;gap:18px;align-items:center;margin-bottom:18px}
+.ring{width:82px;height:82px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--teal) var(--pct),#e6eeee 0);position:relative}
+.ring:after{content:"";position:absolute;inset:10px;border-radius:50%;background:white}.ring b{z-index:1}
+.save{font-size:13px;color:var(--green);font-weight:700}.save.pending{color:#bd8b20}
+.lesson-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
+.lesson{border:1px solid var(--line);background:white;border-radius:16px;padding:15px;min-height:130px;text-align:left;transition:.15s}
+.lesson:hover{transform:translateY(-2px);box-shadow:var(--shadow)}.lesson .num{font-weight:900;color:var(--teal)}
+.lesson .ico{font-size:26px;margin:8px 0}.lesson .title{font-weight:750}.status{margin-top:8px;display:inline-block;font-size:12px;border-radius:999px;padding:4px 9px;background:#eff2f2;color:#728084}
+.status.done{background:#e5f6ea;color:#2f8752}.status.current{background:#fff0c4;color:#9d7200}
+.lesson-page{max-width:920px;margin:auto}.lesson-header{padding:22px;margin-bottom:14px;background:linear-gradient(135deg,#effafa,#fff)}
+.lesson-header h2{margin:0}.focus{color:var(--muted);margin-top:6px}.step{padding:20px;margin:13px 0}.step-title{display:flex;gap:10px;align-items:center;margin-bottom:12px}
+.badge{width:42px;height:42px;border-radius:12px;background:var(--teal);color:#fff;display:grid;place-items:center;font-weight:800}.step h3{margin:0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.checks{display:flex;flex-wrap:wrap;gap:10px 18px}.checks label{background:#f5faf9;border:1px solid var(--line);border-radius:11px;padding:8px 10px}
+.navrow{display:flex;justify-content:space-between;gap:12px;margin-top:18px}.navrow button{min-width:150px}
+.evidence{background:#eef8f3;border:1px solid #cfe8d8;border-radius:13px;padding:12px;margin-top:14px;color:#39705a}
+.warn{background:var(--yellow);border:1px solid #f0cf60;border-radius:16px;padding:16px;margin-top:16px}
+.validation-summary{background:#fff0eb;border:1px solid #e4a491;color:#7d3425;border-radius:14px;padding:12px 14px;margin:14px 0}
+.field-error{border-color:#d36b55!important;background:#fff8f6!important}
+.error-text{color:#a94432;font-size:13px;margin-top:5px}
+.teacher-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:16px}.table-card,.preview{padding:18px}
+.group-row{display:grid;grid-template-columns:1fr .7fr .8fr .8fr;gap:8px;padding:11px 8px;border-bottom:1px solid var(--line);font-size:14px}
+.group-row.head{font-weight:800;color:var(--muted)}.group-row.active{background:#eaf7f5;border-radius:10px}
+.preview-section{border:1px solid var(--line);border-radius:13px;margin:10px 0;overflow:hidden}.preview-section h4{margin:0;padding:11px 13px;background:#f8fbfa}.preview-section .body{padding:12px 13px;font-size:14px;white-space:pre-wrap}
+.placeholder{padding:42px;text-align:center}.placeholder .big{font-size:58px}
+.local-banner{background:#fff3ca;border:1px solid #edd785;color:#6e5a17;border-radius:13px;padding:10px 13px;margin-bottom:14px;font-size:14px}
+.mini{font-size:12px;color:var(--muted)}
+@media(max-width:900px){.login-wrap,.teacher-grid{grid-template-columns:1fr}.hero{min-height:330px}.lesson-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:650px){.shell{padding:12px}.topbar{align-items:flex-start}.brand h1{font-size:18px}.login-panel,.hero{padding:24px}.select-grid,.two{grid-template-columns:1fr}.lesson-grid{grid-template-columns:repeat(2,1fr)}.progress-card{grid-template-columns:70px 1fr}.progress-card .save{grid-column:1/-1}.group-row{grid-template-columns:1fr .7fr .7fr}.group-row span:last-child{display:none}.navrow{flex-direction:column}.navrow button{width:100%}}
