@@ -31,7 +31,7 @@
   <section class="view active" id="loginView">
     <div class="landing-layout">
       <section class="hero-panel" aria-label="校園小黑蚊課程形象圖">
-        <img class="hero-image" src="assets/homepage-left-hero.svg" alt="從校園小黑蚊開始真實問題探索的課程形象圖">
+        <img id="heroImage" class="hero-image" width="968" height="789" alt="從校園小黑蚊開始真實問題探索的課程形象圖">
       </section>
 
       <section class="entry-panel">
@@ -109,6 +109,25 @@
   </section>
 </div>
 
+<script>
+(async () => {
+  const hero = document.getElementById('heroImage');
+  const root = 'https://raw.githubusercontent.com/bai-collab/campus-biting-midge-web/main/.hero-upload/';
+  try {
+    const parts = await Promise.all(
+      Array.from({ length: 13 }, async (_, index) => {
+        const path = `${root}part${String(index).padStart(2, '0')}.txt`;
+        const response = await fetch(path, { cache: 'force-cache' });
+        if (!response.ok) throw new Error(`Hero part ${index} failed: ${response.status}`);
+        return response.text();
+      })
+    );
+    hero.src = `data:image/webp;base64,${parts.join('').replace(/\s+/g, '')}`;
+  } catch (error) {
+    console.error('[homepage hero]', error);
+  }
+})();
+</script>
 <script src="app-core.js"></script>
 <script src="lessons-3-6.js"></script>
 <script src="lessons-7-10.js"></script>
