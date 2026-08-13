@@ -1,21 +1,285 @@
-/* 校園小黑蚊｜學生首頁：單一 Hero 圖、等比例響應式 */
-.landing-layout{display:grid;grid-template-columns:66fr 34fr;width:100%;align-items:start;overflow:hidden;border:1px solid var(--line);border-radius:1.75rem;background:#fff;box-shadow:0 1.1rem 3rem rgba(24,69,75,.09)}
-.hero-panel{width:100%;min-width:0;align-self:start;overflow:hidden;background:#dff5f8}
-.hero-image{display:block;width:100%;height:auto;max-width:100%;object-fit:contain}
-.entry-panel{display:flex;flex-direction:column;justify-content:center;min-width:0;align-self:stretch;padding:8% 9% 6%;box-sizing:border-box;background:#fff;container-type:inline-size}
-.entry-main{width:100%}
-.entry-eyebrow{margin-bottom:4%;color:#358568;font-size:clamp(.72rem,3.2cqw,.9rem);font-weight:800}
-.entry-panel h2{margin:0 0 2%;color:#123b47;font-size:clamp(1.65rem,7.2cqw,2.15rem);line-height:1.18;font-weight:900}
-.entry-subtitle{margin:0 0 9%;color:#6c8187;font-size:clamp(.72rem,3.2cqw,.9rem)}
-.entry-panel .select-grid{display:grid;grid-template-columns:48% 48%;justify-content:space-between;gap:0;margin-bottom:8%}
-.entry-panel .field label{display:block;margin-bottom:5%;color:#173d47;font-size:clamp(.85rem,3.8cqw,1rem);font-weight:800}
-.entry-panel .field select{width:100%;min-height:3.4em;padding-inline:8%;border:1px solid #bdd5d8;border-radius:.9rem;background:#fff;color:#173d47;font-size:clamp(.85rem,3.6cqw,1rem);outline:none;box-sizing:border-box}
-.entry-panel .field select:focus{border-color:#0b918c;box-shadow:0 0 0 .2rem rgba(11,145,140,.12)}
-.enter-button{width:100%;min-height:3.6em;display:flex;align-items:center;justify-content:center;gap:5%;border:0;border-radius:1rem;background:#0c9a94;color:#fff;font-size:clamp(1rem,4.5cqw,1.25rem);font-weight:900;cursor:pointer;box-shadow:0 .9rem 1.7rem rgba(12,154,148,.22)}
-.identity-note{display:flex;gap:3%;margin-top:7%;padding:5%;border:1px solid #e8efef;border-radius:.95rem;background:#f6faf9;color:#657d82}
-.identity-note p{margin:0;font-size:clamp(.72rem,3.2cqw,.88rem);line-height:1.65}
-.learning-focus{display:grid;grid-template-columns:repeat(4,22%);justify-content:space-between;gap:0;margin-top:10%;padding:6% 4%;border-radius:1.1rem;background:linear-gradient(135deg,#effbf6,#f3faf7)}
-.focus-item{display:flex;flex-direction:column;align-items:center;gap:.55rem;min-width:0;text-align:center;color:#224e59;font-size:clamp(.68rem,2.9cqw,.82rem);font-weight:800}
-.focus-icon{width:72%;aspect-ratio:1;display:grid;place-items:center;border-radius:50%;background:#fff;border:1px solid #dbeaea;font-size:clamp(1rem,5cqw,1.45rem)}
-@media(max-width:62rem){.landing-layout{grid-template-columns:1fr}.entry-panel{padding:7% 6%}}
-@media(max-width:42rem){.landing-layout{border-radius:1.25rem}.entry-panel{padding:8% 6%}.entry-panel .select-grid{grid-template-columns:1fr;gap:1rem}.learning-focus{grid-template-columns:47% 47%;row-gap:1rem}.focus-icon{width:45%}}
+/* 校園小黑蚊｜首頁版面 v2
+   Layout contract：
+   - Desktop：左圖右表單
+   - Hero 圖維持 968:789，不拉伸、不裁切
+   - Entry panel 保留可讀寬度，不與圖片互相擠壓
+   - <= 960px 改為上下排列
+   - <= 640px 表單與學習焦點改為單欄／雙欄
+*/
+
+.landing-layout{
+  display:grid;
+  grid-template-columns:minmax(0,1.45fr) minmax(320px,.8fr);
+  width:100%;
+  align-items:stretch;
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:28px;
+  background:#fff;
+  box-shadow:0 18px 48px rgba(24,69,75,.09);
+}
+
+/* ---------- Hero ---------- */
+
+.hero-panel{
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  width:100%;
+  min-width:0;
+  overflow:hidden;
+  background:#dff5f8;
+}
+
+.hero-image{
+  display:block;
+  width:100%;
+  height:auto;
+  max-width:100%;
+  aspect-ratio:968 / 789;
+  object-fit:contain;
+}
+
+/* ---------- Entry ---------- */
+
+.entry-panel{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  min-width:0;
+  padding:40px 34px 30px;
+  background:#fff;
+}
+
+.entry-main{
+  width:100%;
+  max-width:430px;
+  margin-inline:auto;
+}
+
+.entry-eyebrow{
+  margin-bottom:12px;
+  color:#358568;
+  font-size:.9rem;
+  font-weight:800;
+  line-height:1.5;
+}
+
+.entry-panel h2{
+  margin:0 0 8px;
+  color:#123b47;
+  font-size:clamp(1.85rem,3vw,2.35rem);
+  line-height:1.18;
+  font-weight:900;
+}
+
+.entry-subtitle{
+  margin:0 0 28px;
+  color:#6c8187;
+  font-size:.92rem;
+}
+
+/* ---------- Selects ---------- */
+
+.entry-panel .select-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:14px;
+  margin-bottom:22px;
+}
+
+.entry-panel .field{
+  min-width:0;
+  margin:0;
+}
+
+.entry-panel .field label{
+  display:block;
+  margin-bottom:7px;
+  color:#173d47;
+  font-size:.95rem;
+  font-weight:800;
+}
+
+.entry-panel .field select{
+  width:100%;
+  min-width:0;
+  min-height:48px;
+  padding:10px 12px;
+  border:1px solid #bdd5d8;
+  border-radius:14px;
+  background:#fff;
+  color:#173d47;
+  font-size:1rem;
+  box-sizing:border-box;
+  outline:none;
+}
+
+.entry-panel .field select:focus{
+  border-color:#0b918c;
+  box-shadow:0 0 0 3px rgba(11,145,140,.12);
+}
+
+/* ---------- Primary action ---------- */
+
+.enter-button{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  width:100%;
+  min-height:54px;
+  border:0;
+  border-radius:16px;
+  background:#0c9a94;
+  color:#fff;
+  font-size:1.08rem;
+  font-weight:900;
+  cursor:pointer;
+  box-shadow:0 12px 24px rgba(12,154,148,.22);
+}
+
+.enter-button:hover{
+  background:#0a8883;
+}
+
+.enter-button:focus-visible{
+  outline:3px solid rgba(12,154,148,.25);
+  outline-offset:3px;
+}
+
+/* ---------- Identity note ---------- */
+
+.identity-note{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  margin-top:18px;
+  padding:14px;
+  border:1px solid #e4eeee;
+  border-radius:14px;
+  background:#f6faf9;
+  color:#657d82;
+}
+
+.identity-note > span{
+  flex:0 0 auto;
+}
+
+.identity-note p{
+  margin:0;
+  font-size:.83rem;
+  line-height:1.65;
+}
+
+/* ---------- Learning focus ---------- */
+
+.learning-focus{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+  width:100%;
+  max-width:430px;
+  margin:28px auto 0;
+  padding:16px 12px;
+  border-radius:18px;
+  background:linear-gradient(135deg,#effbf6,#f3faf7);
+}
+
+.focus-item{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  gap:8px;
+  min-width:0;
+  color:#224e59;
+  text-align:center;
+  font-size:.78rem;
+  font-weight:800;
+  line-height:1.35;
+}
+
+.focus-icon{
+  display:grid;
+  place-items:center;
+  width:48px;
+  height:48px;
+  border:1px solid #dbeaea;
+  border-radius:50%;
+  background:#fff;
+  font-size:1.35rem;
+}
+
+/* ---------- Tablet ---------- */
+
+@media (max-width:960px){
+  .landing-layout{
+    grid-template-columns:1fr;
+  }
+
+  .hero-panel{
+    max-height:none;
+  }
+
+  .hero-image{
+    width:100%;
+    height:auto;
+  }
+
+  .entry-panel{
+    padding:36px 28px 30px;
+  }
+
+  .entry-main,
+  .learning-focus{
+    max-width:620px;
+  }
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width:640px){
+  .landing-layout{
+    border-radius:20px;
+  }
+
+  .entry-panel{
+    padding:28px 18px 24px;
+  }
+
+  .entry-panel h2{
+    font-size:1.8rem;
+  }
+
+  .entry-subtitle{
+    margin-bottom:22px;
+  }
+
+  .entry-panel .select-grid{
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+
+  .learning-focus{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px;
+    padding:14px;
+  }
+
+  .focus-item{
+    font-size:.82rem;
+  }
+}
+
+/* ---------- Very narrow screens ---------- */
+
+@media (max-width:380px){
+  .entry-panel{
+    padding-inline:14px;
+  }
+
+  .learning-focus{
+    grid-template-columns:1fr 1fr;
+  }
+}
