@@ -11,67 +11,28 @@
 <body>
 <div class="shell">
   <header class="topbar">
-    <div class="brand">
-      <div class="brandmark">🦟</div>
-      <div>
-        <h1>校園小黑蚊 Web 學習單</h1>
-        <p>AI 融入問題探索課程｜學生端 Prototype</p>
-      </div>
-    </div>
-    <div class="top-actions">
-      <button class="ghost" id="homeBtn">📊 學習歷程</button>
-      <button class="ghost" id="resetBtn">🗑️ 清除此組測試資料</button>
-    </div>
+    <div class="brand"><div class="brandmark">🦟</div><div><h1>校園小黑蚊 Web 學習單</h1><p>AI 融入問題探索課程｜學生端 Prototype</p></div></div>
+    <div class="top-actions"><button class="ghost" id="homeBtn">📊 學習歷程</button><button class="ghost" id="resetBtn">🗑️ 清除此組測試資料</button></div>
   </header>
-
-  <div class="local-banner">
-    ⚠️ 單機測試版：目前資料只儲存在這台裝置的瀏覽器，不會上傳 Google Sheets。正式版將替換為 GAS 儲存介面。
-  </div>
+  <div class="local-banner">⚠️ 單機測試版：目前資料只儲存在這台裝置的瀏覽器，不會上傳 Google Sheets。正式版將替換為 GAS 儲存介面。</div>
 
   <section class="view active" id="loginView">
     <div class="landing-layout">
       <section class="hero-panel" aria-label="校園小黑蚊課程形象圖">
-        <img id="heroImage" class="hero-image" width="968" height="789" alt="從校園小黑蚊開始真實問題探索的課程形象圖">
+        <img id="heroImage" class="hero-image" src="homepage-left-hero.png" width="968" height="789" alt="從校園小黑蚊開始真實問題探索的課程形象圖">
       </section>
-
       <section class="entry-panel">
         <div class="entry-main">
           <div class="entry-eyebrow">🌱 歡迎來到校園小黑蚊的探索世界</div>
           <h2>進入學習單</h2>
           <p class="entry-subtitle">免帳號登入｜使用班級 + 組別識別</p>
-
           <div class="select-grid">
-            <div class="field">
-              <label for="classSelect">🏫 班級</label>
-              <select id="classSelect">
-                <option value="5A">五年甲班</option>
-                <option value="5B">五年乙班</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="groupSelect">👥 組別</label>
-              <select id="groupSelect">
-                <option value="G01">第 1 組</option>
-                <option value="G02">第 2 組</option>
-                <option value="G03">第 3 組</option>
-                <option value="G04">第 4 組</option>
-                <option value="G05">第 5 組</option>
-                <option value="G06">第 6 組</option>
-              </select>
-            </div>
+            <div class="field"><label for="classSelect">🏫 班級</label><select id="classSelect"><option value="5A">五年甲班</option><option value="5B">五年乙班</option></select></div>
+            <div class="field"><label for="groupSelect">👥 組別</label><select id="groupSelect"><option value="G01">第 1 組</option><option value="G02">第 2 組</option><option value="G03">第 3 組</option><option value="G04">第 4 組</option><option value="G05">第 5 組</option><option value="G06">第 6 組</option></select></div>
           </div>
-
-          <button class="enter-button" id="enterBtn">
-            進入學習單
-            <span aria-hidden="true">→</span>
-          </button>
-
-          <div class="identity-note">
-            <span aria-hidden="true">🛡️</span>
-            <p>這裡的「班級＋組別」是識別方式，不是真正的身分驗證。正式課堂版之後可選擇加入小組碼。</p>
-          </div>
+          <button class="enter-button" id="enterBtn">進入學習單 <span aria-hidden="true">→</span></button>
+          <div class="identity-note"><span aria-hidden="true">🛡️</span><p>這裡的「班級＋組別」是識別方式，不是真正的身分驗證。正式課堂版之後可選擇加入小組碼。</p></div>
         </div>
-
         <div class="learning-focus">
           <div class="focus-item"><div class="focus-icon">🔎</div><span>觀察紀錄</span></div>
           <div class="focus-item"><div class="focus-icon">💬</div><span>訪談整理</span></div>
@@ -83,51 +44,13 @@
   </section>
 
   <section class="view" id="dashView">
-    <div class="dashboard-head">
-      <div>
-        <h2 style="margin:0">我的學習歷程</h2>
-        <div class="chips"><span class="chip" id="classChip"></span><span class="chip" id="groupChip"></span></div>
-      </div>
-      <div class="save" id="dashSave">✓ 已儲存到此裝置</div>
-    </div>
-
-    <div class="card progress-card">
-      <div class="ring" id="ring" style="--pct:0%"><b id="ringText">0/12</b></div>
-      <div>
-        <div class="mini">已完成</div>
-        <div style="font-size:28px;font-weight:900"><span id="doneCount">0</span> / 12 節</div>
-        <div class="mini">上次儲存：<span id="lastSaved">—</span></div>
-      </div>
-      <div class="save">🌱 每完成一節，都保留一份學習證據</div>
-    </div>
-
+    <div class="dashboard-head"><div><h2 style="margin:0">我的學習歷程</h2><div class="chips"><span class="chip" id="classChip"></span><span class="chip" id="groupChip"></span></div></div><div class="save" id="dashSave">✓ 已儲存到此裝置</div></div>
+    <div class="card progress-card"><div class="ring" id="ring" style="--pct:0%"><b id="ringText">0/12</b></div><div><div class="mini">已完成</div><div style="font-size:28px;font-weight:900"><span id="doneCount">0</span> / 12 節</div><div class="mini">上次儲存：<span id="lastSaved">—</span></div></div><div class="save">🌱 每完成一節，都保留一份學習證據</div></div>
     <div class="lesson-grid" id="lessonGrid"></div>
   </section>
 
-  <section class="view" id="lessonView">
-    <div id="lessonMount"></div>
-  </section>
+  <section class="view" id="lessonView"><div id="lessonMount"></div></section>
 </div>
-
-<script>
-(async () => {
-  const hero = document.getElementById('heroImage');
-  const root = 'https://raw.githubusercontent.com/bai-collab/campus-biting-midge-web/main/.hero-upload/';
-  try {
-    const parts = await Promise.all(
-      Array.from({ length: 13 }, async (_, index) => {
-        const path = `${root}part${String(index).padStart(2, '0')}.txt`;
-        const response = await fetch(path, { cache: 'force-cache' });
-        if (!response.ok) throw new Error(`Hero part ${index} failed: ${response.status}`);
-        return response.text();
-      })
-    );
-    hero.src = `data:image/webp;base64,${parts.join('').replace(/\s+/g, '')}`;
-  } catch (error) {
-    console.error('[homepage hero]', error);
-  }
-})();
-</script>
 <script src="app-core.js"></script>
 <script src="lessons-3-6.js"></script>
 <script src="lessons-7-10.js"></script>
