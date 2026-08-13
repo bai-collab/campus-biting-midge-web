@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>校園小黑蚊｜教師查看</title>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b8f8a'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-size='36'%3E🦟%3C/text%3E%3C/svg%3E" rel="icon"/>
+<link href="styles.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="shell">
+<header class="topbar">
+<div class="brand"><div class="brandmark">👩🏻‍🏫</div><div><h1>校園小黑蚊｜教師查看</h1><p>Prototype 教師端</p></div></div>
+<div class="top-actions"><a class="ghost" href="index.html" style="text-decoration:none">返回學生端</a></div>
+</header>
+<div class="local-banner">⚠️ Prototype：此密碼只用來避免學生誤入，不是正式資安驗證。正式版會改為伺服器端教師驗證。</div>
+<section class="view active" id="teacherLoginView">
+<div class="card login-wrap">
+<div class="hero"><div class="big">👩🏻‍🏫</div><div class="mini">教師專用入口</div><h2>查看各組學習進度</h2><p>輸入教師密碼後才能進入 Dashboard。</p></div>
+<div class="login-panel">
+<h2>教師驗證</h2>
+<div class="field"><label for="teacherPassword">密碼</label><input id="teacherPassword" type="password" autocomplete="current-password"/></div>
+<button class="big-btn" id="teacherLoginBtn">進入教師查看　→</button>
+<div id="teacherLoginError" class="validation-summary" style="display:none" aria-live="polite"></div>
+</div>
+</div>
+</section>
+<section class="view" id="teacherView">
+<div class="dashboard-head"><div><h2 style="margin:0">教師查看</h2><p class="mini">單機版只會讀取「這個瀏覽器」曾建立過的班級／組別測試資料。</p></div><button class="ghost" id="refreshTeacher">重新整理</button></div>
+<div class="teacher-grid"><div class="card table-card"><div class="group-row head"><span>組別</span><span>完成</span><span>目前節次</span><span>最後更新</span></div><div id="groupList"></div></div><div class="card preview"><div id="previewMount"><div class="placeholder"><div class="big">👩🏻‍🏫</div><p>請從左側選擇一組。</p></div></div><div class="warn"><b>🛡️ Human Gate｜匿名化提醒</b><br/>進行 AI 相關活動前，必須移除姓名、座號、聯絡方式與其他可識別細節；沒有第一手證據支持的 AI 內容仍需標記「待確認」。</div></div></div>
+</section>
+</div>
+<script src="teacher.js"></script>
+</body>
+</html>
