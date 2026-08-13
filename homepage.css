@@ -1,13 +1,13 @@
 /* =========================================================
    校園小黑蚊｜學生首頁
-   比例式 Responsive Layout
+   Intrinsic-ratio Responsive Layout
 ========================================================= */
 
 .landing-layout {
   display: grid;
   grid-template-columns: 66% 34%;
   width: 100%;
-  min-height: 72vh;
+  align-items: start;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 1.75rem;
@@ -15,9 +15,11 @@
   box-shadow: 0 1.1rem 3rem rgba(24, 69, 75, .09);
 }
 
-/* ---------- 左側 Hero ---------- */
+/* ---------- 左側 Hero：由圖片比例主導 ---------- */
 .hero-panel {
   position: relative;
+  width: 100%;
+  aspect-ratio: 5 / 4;
   min-width: 0;
   overflow: hidden;
   container-type: inline-size;
@@ -30,8 +32,8 @@
   width: 100%;
   height: 100%;
   display: block;
-  object-fit: cover;
-  object-position: 54% center;
+  object-fit: contain;
+  object-position: center center;
 }
 
 .hero-panel::after {
@@ -42,19 +44,19 @@
   pointer-events: none;
   background: linear-gradient(
     90deg,
-    rgba(226, 247, 247, .95) 0%,
-    rgba(226, 247, 247, .82) 28%,
-    rgba(226, 247, 247, .45) 48%,
-    rgba(226, 247, 247, .08) 68%,
-    rgba(255, 255, 255, 0) 82%
+    rgba(226, 247, 247, .94) 0%,
+    rgba(226, 247, 247, .78) 27%,
+    rgba(226, 247, 247, .38) 48%,
+    rgba(226, 247, 247, .06) 67%,
+    rgba(255, 255, 255, 0) 80%
   );
 }
 
 .hero-overlay {
   position: relative;
   z-index: 2;
-  width: 74%;
-  padding: 6% 4% 5% 7%;
+  width: 63%;
+  padding: 6% 4% 4.5% 7%;
   box-sizing: border-box;
 }
 
@@ -67,7 +69,7 @@
   background: rgba(255, 255, 255, .86);
   border: 1px solid rgba(11, 143, 138, .12);
   color: #146d68;
-  font-size: clamp(.78rem, 1.8cqw, 1rem);
+  font-size: clamp(.78rem, 1.75cqw, 1rem);
   font-weight: 800;
   backdrop-filter: blur(.4rem);
 }
@@ -75,7 +77,7 @@
 .hero-overlay h2 {
   margin: 0 0 3%;
   color: #08475a;
-  font-size: clamp(2rem, 5.2cqw, 3.45rem);
+  font-size: clamp(1.9rem, 4.7cqw, 3.25rem);
   line-height: 1.12;
   letter-spacing: -.035em;
   font-weight: 900;
@@ -83,49 +85,48 @@
 }
 
 .hero-overlay p {
-  width: 78%;
+  width: 82%;
   margin: 0;
   color: #376774;
-  font-size: clamp(.9rem, 2.15cqw, 1.15rem);
+  font-size: clamp(.9rem, 2cqw, 1.12rem);
   line-height: 1.7;
   font-weight: 500;
 }
 
 /* ---------- 右側登入 ---------- */
 .entry-panel {
+  align-self: stretch;
   display: flex;
   flex-direction: column;
   justify-content: center;
   min-width: 0;
-  padding: 8% 9% 6%;
+  padding: 7% 9% 5%;
   box-sizing: border-box;
   background: rgba(255, 255, 255, .98);
   container-type: inline-size;
 }
 
-.entry-main {
-  width: 100%;
-}
+.entry-main { width: 100%; }
 
 .entry-eyebrow {
   margin-bottom: 4%;
   color: #358568;
-  font-size: clamp(.72rem, 3.2cqw, .9rem);
+  font-size: clamp(.72rem, 3.1cqw, .9rem);
   font-weight: 800;
 }
 
 .entry-panel h2 {
   margin: 0 0 2%;
   color: #123b47;
-  font-size: clamp(1.65rem, 7.2cqw, 2.15rem);
+  font-size: clamp(1.55rem, 6.8cqw, 2.05rem);
   line-height: 1.18;
   font-weight: 900;
 }
 
 .entry-subtitle {
-  margin: 0 0 9%;
+  margin: 0 0 8%;
   color: #6c8187;
-  font-size: clamp(.72rem, 3.2cqw, .9rem);
+  font-size: clamp(.72rem, 3.1cqw, .9rem);
 }
 
 .entry-panel .select-grid {
@@ -133,26 +134,26 @@
   grid-template-columns: 48% 48%;
   justify-content: space-between;
   gap: 0;
-  margin-bottom: 8%;
+  margin-bottom: 7%;
 }
 
 .entry-panel .field label {
   display: block;
   margin-bottom: 5%;
   color: #173d47;
-  font-size: clamp(.85rem, 3.8cqw, 1rem);
+  font-size: clamp(.84rem, 3.6cqw, 1rem);
   font-weight: 800;
 }
 
 .entry-panel .field select {
   width: 100%;
-  min-height: 3.4em;
+  min-height: 3.3em;
   padding-inline: 8%;
   border: 1px solid #bdd5d8;
   border-radius: .9rem;
   background: #fff;
   color: #173d47;
-  font-size: clamp(.85rem, 3.6cqw, 1rem);
+  font-size: clamp(.84rem, 3.5cqw, 1rem);
   outline: none;
   box-sizing: border-box;
 }
@@ -164,7 +165,7 @@
 
 .enter-button {
   width: 100%;
-  min-height: 3.6em;
+  min-height: 3.5em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -173,7 +174,7 @@
   border-radius: 1rem;
   background: #0c9a94;
   color: #fff;
-  font-size: clamp(1rem, 4.5cqw, 1.25rem);
+  font-size: clamp(1rem, 4.3cqw, 1.2rem);
   font-weight: 900;
   cursor: pointer;
   box-shadow: 0 .9rem 1.7rem rgba(12, 154, 148, .22);
@@ -181,19 +182,17 @@
 }
 
 .enter-button:hover {
-  transform: translateY(-1px);
+  transform: translateY(-.08em);
   background: #088d88;
   box-shadow: 0 1rem 1.9rem rgba(12, 154, 148, .28);
 }
 
-.enter-button:active {
-  transform: translateY(0);
-}
+.enter-button:active { transform: translateY(0); }
 
 .identity-note {
   display: flex;
   gap: 3%;
-  margin-top: 7%;
+  margin-top: 6%;
   padding: 5%;
   border: 1px solid #e8efef;
   border-radius: .95rem;
@@ -203,7 +202,7 @@
 
 .identity-note p {
   margin: 0;
-  font-size: clamp(.72rem, 3.2cqw, .88rem);
+  font-size: clamp(.72rem, 3cqw, .86rem);
   line-height: 1.65;
 }
 
@@ -212,8 +211,8 @@
   grid-template-columns: repeat(4, 22%);
   justify-content: space-between;
   gap: 0;
-  margin-top: 10%;
-  padding: 6% 4%;
+  margin-top: 8%;
+  padding: 5% 4%;
   border-radius: 1.1rem;
   background: linear-gradient(135deg, #effbf6, #f3faf7);
 }
@@ -226,7 +225,7 @@
   min-width: 0;
   text-align: center;
   color: #224e59;
-  font-size: clamp(.68rem, 2.9cqw, .82rem);
+  font-size: clamp(.68rem, 2.8cqw, .82rem);
   font-weight: 800;
 }
 
@@ -238,22 +237,21 @@
   border-radius: 50%;
   background: #fff;
   border: 1px solid #dbeaea;
-  font-size: clamp(1rem, 5cqw, 1.45rem);
+  font-size: clamp(1rem, 4.8cqw, 1.4rem);
 }
 
-/* ---------- 中型平板 ---------- */
+/* ---------- 平板：改成單欄，圖片仍保留原始比例 ---------- */
 @media (max-width: 62rem) {
   .landing-layout {
     grid-template-columns: 100%;
-    min-height: auto;
   }
 
   .hero-panel {
-    min-height: 62vw;
+    aspect-ratio: 5 / 4;
   }
 
   .hero-overlay {
-    width: 68%;
+    width: 64%;
     padding: 6% 5%;
   }
 
@@ -262,42 +260,46 @@
   }
 }
 
-/* ---------- 手機 ---------- */
+/* ---------- 手機：文字與圖片改為上下流動，不再覆蓋裁切 ---------- */
 @media (max-width: 42rem) {
   .landing-layout {
     border-radius: 1.25rem;
   }
 
   .hero-panel {
-    min-height: 112vw;
-  }
-
-  .hero-image {
-    object-position: 62% center;
+    display: flex;
+    flex-direction: column;
+    aspect-ratio: auto;
   }
 
   .hero-panel::after {
-    background: linear-gradient(
-      180deg,
-      rgba(226, 247, 249, .97) 0%,
-      rgba(226, 247, 249, .85) 35%,
-      rgba(226, 247, 249, .25) 63%,
-      rgba(255, 255, 255, 0) 100%
-    );
+    display: none;
   }
 
   .hero-overlay {
+    order: -1;
     width: 100%;
-    padding: 7% 6%;
+    padding: 7% 6% 5%;
+    background: linear-gradient(145deg, #e2f7f9, #eef9ee);
+  }
+
+  .hero-image {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+    object-fit: contain;
+    object-position: center center;
   }
 
   .hero-overlay h2 {
-    font-size: clamp(1.85rem, 9cqw, 2.8rem);
+    font-size: clamp(1.8rem, 8.8cqw, 2.7rem);
   }
 
   .hero-overlay p {
-    width: 90%;
-    font-size: clamp(.9rem, 4.2cqw, 1.05rem);
+    width: 92%;
+    font-size: clamp(.9rem, 4.1cqw, 1.05rem);
   }
 
   .entry-panel {
