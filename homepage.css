@@ -1,0 +1,13 @@
+.homepage-login{grid-template-columns:minmax(0,1.25fr) minmax(360px,.75fr);min-height:650px;background:linear-gradient(135deg,#f1fbfd,#f7fbef 55%,#fff9df)}
+.hero-generated{padding:34px 32px 10px;background:linear-gradient(160deg,#dff6fb 0%,#eef9e9 58%,#fff6cf 100%);display:flex;flex-direction:column;justify-content:space-between;min-height:650px}
+.hero-copy{position:relative;z-index:2;max-width:620px}
+.hero-generated h2{font-size:38px;line-height:1.2;margin:10px 0 12px;color:#103f45;letter-spacing:-.02em}
+.hero-generated p{max-width:570px;font-size:16px;color:#47686d;margin:0}
+.hero-kicker{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.74);border:1px solid rgba(11,143,138,.12);color:#0b7774;font-weight:800;backdrop-filter:blur(8px)}
+.hero-art{align-self:center;max-width:900px;margin-top:-6px}
+.login-panel{background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-left:1px solid rgba(220,231,232,.9)}
+.login-eyebrow{color:#39705a;font-weight:800;margin-bottom:8px}
+.homepage-login .field select{background:#fbfdfc;min-height:48px}
+.homepage-login .big-btn{box-shadow:0 10px 24px rgba(11,143,138,.2)}
+@media(max-width:900px){.homepage-login{grid-template-columns:1fr}.hero-generated{min-height:560px}.login-panel{border-left:0;border-top:1px solid var(--line)}.hero-generated h2{font-size:32px}}
+@media(max-width:650px){.hero-generated{padding:24px 20px 4px;min-height:470px}.hero-generated h2{font-size:27px}.hero-generated p{font-size:14px}.hero-art{margin-top:4px}.homepage-login{min-height:0}}
