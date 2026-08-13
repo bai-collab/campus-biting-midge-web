@@ -1,0 +1,53 @@
+/* Header-only mosquito animation: stays in place, wings flap subtly. */
+.brandmark-mascot-anchor{
+  width:64px;
+  height:52px;
+  border-radius:16px;
+  background:linear-gradient(145deg,#0b8f8a,#075f62);
+  overflow:visible;
+  position:relative;
+  display:grid;
+  place-items:center;
+  box-shadow:0 8px 20px rgba(11,143,138,.18);
+}
+.header-mosquito{
+  width:86px;
+  height:64px;
+  overflow:visible;
+  pointer-events:none;
+  user-select:none;
+  filter:drop-shadow(0 5px 5px rgba(8,28,30,.20));
+  animation:headerMosquitoHover 3.2s ease-in-out infinite;
+}
+.header-mosquito .wing{
+  transform-box:fill-box;
+  will-change:transform;
+}
+.header-mosquito .wing-left{
+  transform-origin:88% 72%;
+  animation:headerWingLeft .11s ease-in-out infinite alternate;
+}
+.header-mosquito .wing-right{
+  transform-origin:12% 72%;
+  animation:headerWingRight .11s ease-in-out infinite alternate;
+}
+@keyframes headerWingLeft{
+  from{transform:rotate(-7deg) scaleY(1)}
+  to{transform:rotate(13deg) scaleY(.42)}
+}
+@keyframes headerWingRight{
+  from{transform:rotate(7deg) scaleY(1)}
+  to{transform:rotate(-13deg) scaleY(.42)}
+}
+@keyframes headerMosquitoHover{
+  0%,100%{transform:translateY(0) rotate(-1deg)}
+  50%{transform:translateY(-1.5px) rotate(1deg)}
+}
+@media(max-width:650px){
+  .brandmark-mascot-anchor{width:56px;height:48px}
+  .header-mosquito{width:74px;height:56px}
+}
+@media(prefers-reduced-motion:reduce){
+  .header-mosquito,
+  .header-mosquito .wing{animation:none!important}
+}
